@@ -1,0 +1,37 @@
+body {
+	font-family: sans-serif;
+}
+
+#header {
+	background-color: #00455f;
+	padding: 20px 0 0 20px;
+}
+
+#header a {
+	text-decoration: none;
+	color: white;
+}
+
+#header h1 {
+	font-size: 40px;
+}
+
+#header h1 small {
+	color: #aaaaaa;
+	font-size: 30%;
+}
+
+#date {
+	font-size: 90%;
+	font-style: oblique;
+}
+
+.label a {
+	color: white;
+	text-decoration: none;
+}
+
+.label a:hover {
+	color: white;
+	text-decoration: none;
+}

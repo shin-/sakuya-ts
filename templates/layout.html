@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>{{blogTitle}} : {% block pagetitle %}{{pageTitle}}{% endblock %}</title>
+        {% if tags %}<meta name="keywords" content="{{tags.join()}}"/>{% endif %}
+        <link rel="stylesheet" href="/css/main.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/{{hltheme}}.css">
+        <script type="text/javascript" src="/js/highlight.js"></script>
+        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+    <div class="container">
+        <div id="header" class="row page-header">
+            <a href="/"><h1>{{blogTitle}} <small>Sakuya blog engine</small></h1></a>
+        </div>
+
+        <div id="article" class="panel">
+        {% block content %}
+            <ul id="tags" class="row list-inline">
+            {% for tag in tags %}
+                <li class="label label-info"><a href="/tags/{{tag}}">{{tag}}</a></li>
+            {% endfor %}
+            </ul>
+            <div id="date" class="row">Posted {{date}}</div>
+            <div id="article-text" class="row">{{articleContents()}}</div>
+        {% endblock content %}
+        </div>
+
+        <nav id="nav" class="row">
+        {% block nav %}
+        <ul class="pager">
+            <li class="previous {% if not prev %}disabled{% endif %}"><a href="/{{prev}}">Previous article</a></li>
+            <li class="next {% if not next %}disabled{% endif %}"><a href="/{{next}}">Next article</a></li>
+        </ul>
+        {% endblock nav %}
+        </nav>
+    </div>
+    </body>
+</html>

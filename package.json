@@ -1,0 +1,45 @@
+{
+  "name": "sakuya-ts",
+  "version": "1.0.0",
+  "description": "Sakuya blog now in Typescript",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --build",
+    "start:prod": "node dist/index.js",
+    "start": "node --no-warnings --enable-source-maps --loader ts-node/esm src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shin-/sakuya-blog.git"
+  },
+  "author": "Joffrey F <f.joffrey@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/shin-/sakuya-blog/issues"
+  },
+  "homepage": "https://github.com/shin-/sakuya-blog",
+  "dependencies": {
+    "@koa/router": "^13.1.0",
+    "date-fns": "^4.1.0",
+    "free-swig": "^1.5.5",
+    "ioredis": "^5.4.1",
+    "js-yaml": "^4.1.0",
+    "koa": "^2.15.3",
+    "koa-static": "^5.0.0",
+    "marked": "^15.0.3",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "@sindresorhus/tsconfig": "^7.0.0",
+    "@types/date-fns": "^2.5.3",
+    "@types/js-yaml": "^4.0.9",
+    "@types/koa": "^2.15.0",
+    "@types/koa__router": "^12.0.4",
+    "@types/koa-static": "^4.0.4",
+    "@types/marked": "^5.0.2",
+    "@types/node": "^22.10.1",
+    "ts-node": "^10.9.2"
+  }
+}
